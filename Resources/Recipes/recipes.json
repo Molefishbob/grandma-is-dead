@@ -1,0 +1,125 @@
+{
+  "recipes": [
+    {
+      "id": "blueberry_pie",
+      "name": "Blueberry Pie",
+      "memory": "A memory surfaces as you eat. This was one of Grandma's favourite desserts. She would always serve it just before bed. It made us heavy-eyed and calm at night, yet somehow we always woke the next morning full of energy.",
+
+      "ingredients": [
+        { "id": "flour", "source": "pantry", "hidden": false, "auto_add": true },
+        { "id": "sugar", "source": "pantry", "hidden": false, "auto_add": true },
+        { "id": "eggs", "source": "pantry", "hidden": false, "auto_add": true },
+
+        { "id": "blueberries", "source": "garden", "hidden": true, "auto_add": false },
+        { "id": "orange", "source": "garden", "hidden": true, "auto_add": false },
+        { "id": "wild_thyme", "source": "forest", "hidden": true, "auto_add": false }
+      ],
+
+      "steps": [
+        {
+          "id": "make_crust",
+          "player_text": "From the pantry, combine flour, sugar, and eggs. Work the mixture together until it forms a soft dough, then press it gently into the pie dish."
+        },
+        {
+          "id": "add_orange",
+          "player_text": "Before anything else, zest the orange. Grandma always said the scent should be the first thing to fill the kitchen."
+        },
+        {
+          "id": "add_blueberries",
+          "player_text": "Scatter the blueberries into the prepared crust, letting them settle naturally."
+        },
+        {
+          "id": "add_wild_thyme",
+          "player_text": "Finish with a light sprinkle of wild thyme — just enough to hint at the forest without overpowering the fruit. Bake until golden and the kitchen fills with the scent of warm pie.",
+          "button_text": "Bake Pie"
+        }
+      ],
+
+      "rules": {
+        "auto_add_non_hidden_ingredients_on_cook_start": true,
+        "player_must_supply_hidden_ingredients": true
+      }
+    },
+    {
+      "id": "herbal_tea",
+      "name": "Herbal Tea",
+      "memory": "As the tea settles, a familiar warning returns. Grandma often spoke of the forest and the secrets it held. Its bounties were plentiful, she said, but so were its dangers — and respect was the price of safely taking from it.",
+      
+      "ingredients": [
+        { "id": "water", "source": "pantry", "hidden": false, "auto_add": true },
+        { "id": "honey", "source": "pantry", "hidden": false, "auto_add": true },
+
+        { "id": "mint", "source": "garden", "hidden": true, "auto_add": false },
+        { "id": "chamomile", "source": "garden", "hidden": true, "auto_add": false }
+      ],
+
+      "steps": [
+        {
+          "id": "boil_water",
+          "player_text": "Bring the water to a gentle boil in the old kettle. Wait for the familiar whistle that used to call you to the kitchen."
+        },
+        {
+          "id": "add_mint",
+          "player_text": "Add the fresh mint to the hot water. Its delicate leaves should still hold the morning dew, releasing their cool, refreshing scent."
+        },
+        {
+          "id": "add_chamomile",
+          "player_text": "Stir in the chamomile flowers, letting their gentle floral notes mingle with the mint."
+        },
+        {
+          "id": "steep_herbs",
+          "player_text": "Let everything steep together. Stir in honey until it dissolves, creating a warm, comforting blend.",
+          "button_text": "Steep Herbs"
+        }
+      ],
+
+      "rules": {
+        "auto_add_non_hidden_ingredients_on_cook_start": true,
+        "player_must_supply_hidden_ingredients": true
+      }
+    },
+    {
+      "id": "garlic_bread",
+      "name": "Garlic Bread",
+      "memory": "A familiar comfort follows the first bite. Garlic bread is not only delicious — it keeps those damned blood suckers away. Grandma never baked it without a reason.",
+
+      "ingredients": [
+        { "id": "flour", "source": "pantry", "hidden": false, "auto_add": true },
+        { "id": "water", "source": "pantry", "hidden": false, "auto_add": true },
+
+        { "id": "wild_garlic", "source": "forest", "hidden": true, "auto_add": false },
+        { "id": "wild_thyme", "source": "forest", "hidden": true, "auto_add": false },
+        { "id": "parsley", "source": "garden", "hidden": true, "auto_add": false }
+      ],
+
+      "steps": [
+        {
+          "id": "make_dough",
+          "player_text": "Mix the flour and water together, kneading until the dough becomes smooth and elastic. Let it rest, covered with a cloth, until it's ready to shape."
+        },
+        {
+          "id": "add_wild_garlic",
+          "player_text": "Finely chop the wild garlic. Its pungent aroma will fill the air, sharp and earthy — just as Grandma preferred it."
+        },
+        {
+          "id": "add_wild_thyme",
+          "player_text": "Add the wild thyme to the chopped garlic. The forest herb's earthy notes will complement the sharpness of the wild garlic."
+        },
+        {
+          "id": "add_parsley",
+          "player_text": "Stir in the fresh parsley, chopping it fine enough to release its oils. The bright, fresh flavor will balance the stronger herbs."
+        },
+        {
+          "id": "shape_and_bake",
+          "player_text": "Shape the dough into a rustic loaf, pressing the herb mixture into the surface. Bake until the crust is golden and the kitchen smells of warm bread and wild herbs.",
+          "button_text": "Shape Dough and Bake"
+        }
+      ],
+
+      "rules": {
+        "auto_add_non_hidden_ingredients_on_cook_start": true,
+        "player_must_supply_hidden_ingredients": true
+      }
+    }
+  ]
+}
