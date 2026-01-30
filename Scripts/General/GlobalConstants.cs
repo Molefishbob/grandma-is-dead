@@ -1,4 +1,7 @@
-public partial class GameConstants
+using Godot;
+using System;
+
+public partial class GlobalConstants : Node
 {
     // Animations
     public const string ANIM_IDLE = "Idle";
@@ -16,4 +19,14 @@ public partial class GameConstants
     // Notifications
     public const int NOTIFICATION_ENTER_STATE = 5001;
     public const int NOTIFICATION_EXIT_STATE = 5002;
+	
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
 }

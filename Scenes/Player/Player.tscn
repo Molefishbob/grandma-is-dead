@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d1w5ccem33kle"]
+
+[ext_resource type="Script" uid="uid://dfl7nikgxtn3k" path="res://Scripts/Player/Player.cs" id="1_h54ih"]
+[ext_resource type="Script" uid="uid://drj33g67u8ho" path="res://Scripts/Player/StateMachine.cs" id="2_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://cxfgvvjpc1o6q" path="res://Assets/Sprites/Player/chr_walk_1.png" id="2_ude3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmcll"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1893895081 node_paths=PackedStringArray("AnimPlayerNode", "StateMachineNode", "SpriteNode")]
+script = ExtResource("1_h54ih")
+AnimPlayerNode = NodePath("AnimationPlayer")
+StateMachineNode = NodePath("StateMachine")
+speed = Vector2(10, 10)
+SpriteNode = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1285927309]
+texture = ExtResource("2_ude3g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824774761]
+
+[node name="StateMachine" type="Node" parent="." unique_id=70807211 node_paths=PackedStringArray("states")]
+script = ExtResource("2_ft8w5")
+states = []
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1812455858]
+
+[node name="MoveState" type="Node" parent="StateMachine" unique_id=1496057505]
+
+[node name="PickupState" type="Node" parent="StateMachine" unique_id=1597565189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=330222348]
+shape = SubResource("RectangleShape2D_jmcll")
