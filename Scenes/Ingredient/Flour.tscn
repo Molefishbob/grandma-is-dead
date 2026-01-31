@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cgs8av654jued"]
 
 [ext_resource type="Texture2D" uid="uid://c56ysnthjf712" path="res://Assets/Sprites/Foods/flour.png" id="1_8r658"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_gkhhc"]
 
 [node name="Flour" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_8r658")
+script = ExtResource("2_gkhhc")

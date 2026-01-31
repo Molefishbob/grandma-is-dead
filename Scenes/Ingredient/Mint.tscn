@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ctqk851mp23sh"]
 
 [ext_resource type="Texture2D" uid="uid://bg70kyejllchb" path="res://Assets/Sprites/Foods/mint.png" id="1_w786i"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_tc3n0"]
 
 [node name="Mint" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_w786i")
+script = ExtResource("2_tc3n0")
+ingredientType = 23

@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cveifcn368atm"]
 
 [ext_resource type="Texture2D" uid="uid://bpegsg0va46iy" path="res://Assets/Sprites/Foods/blueberry.png" id="1_7os3a"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_6a2ns"]
 
 [node name="Blueberry" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_7os3a")
+script = ExtResource("2_6a2ns")
+ingredientType = 21

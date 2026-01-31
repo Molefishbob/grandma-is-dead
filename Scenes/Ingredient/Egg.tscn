@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cr2jr2eqwiwpo"]
 
 [ext_resource type="Texture2D" uid="uid://cvaaut8fbypr4" path="res://Assets/Sprites/Foods/egg.png" id="1_jwh6k"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_d4dgi"]
 
 [node name="Egg" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_jwh6k")
+script = ExtResource("2_d4dgi")
+ingredientType = 2

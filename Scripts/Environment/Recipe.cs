@@ -10,18 +10,22 @@ public partial class Recipe : Node
     protected int[] _requiredIngredients = [];
     [Export]
     protected OptionButton[] _options = [];
+    [Export]
+    protected Texture2D[] _ingredients = [];
     protected IngredientType[] _insertedIngredients = [];
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        int i = 0;
         foreach(var option in _options)
         {
             option.Clear();
-            foreach(int i in _requiredIngredients)
+            foreach( var ingredient in _ingredients)
             {
-                option.AddItem(((IngredientType)i).ToString());
+                option.AddIconItem(ingredient, "", i);
             }
+            i++;
         }
     }
 

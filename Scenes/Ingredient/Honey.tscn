@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bw8nq26ndc2xl"]
 
 [ext_resource type="Texture2D" uid="uid://cdfevjw1hn51f" path="res://Assets/Sprites/Foods/honey.png" id="1_88mjk"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_86sxm"]
 
 [node name="Honey" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_88mjk")
+script = ExtResource("2_86sxm")
+ingredientType = 4

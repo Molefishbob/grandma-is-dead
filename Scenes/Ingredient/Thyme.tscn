@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://rwhbqomhgkvd"]
 
 [ext_resource type="Texture2D" uid="uid://jxdotalrfeb6" path="res://Assets/Sprites/Foods/thyme.png" id="1_nh5yb"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_6b5at"]
 
 [node name="Thyme" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_nh5yb")
+script = ExtResource("2_6b5at")
+ingredientType = 41

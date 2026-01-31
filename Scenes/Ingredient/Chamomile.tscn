@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://m8yyxetrggvi"]
 
 [ext_resource type="Texture2D" uid="uid://trhhdw5bjtch" path="res://Assets/Sprites/Foods/chamomile.png" id="1_i30kk"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_pdymb"]
 
 [node name="Chamomile" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_i30kk")
+script = ExtResource("2_pdymb")
+ingredientType = 24

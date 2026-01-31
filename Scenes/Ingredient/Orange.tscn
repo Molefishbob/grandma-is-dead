@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dco01vbu7q05c"]
 
 [ext_resource type="Texture2D" uid="uid://dl2vis10ogl52" path="res://Assets/Sprites/Foods/orange.png" id="1_sq1i6"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_g4dmh"]
 
 [node name="Orange" type="Sprite2D" unique_id=880724500]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_sq1i6")
+script = ExtResource("2_g4dmh")
+ingredientType = 22

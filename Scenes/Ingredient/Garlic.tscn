@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://b8ob1x38qlxlv"]
 
 [ext_resource type="Texture2D" uid="uid://dnwo0onudqi6n" path="res://Assets/Sprites/Foods/garlic.png" id="1_fh41y"]
+[ext_resource type="Script" uid="uid://cbu5dfd55ycc7" path="res://Scripts/Environment/Ingredient.cs" id="2_rgq8c"]
 
 [node name="Garlic" type="Sprite2D" unique_id=1909771140]
 texture = ExtResource("1_fh41y")
+script = ExtResource("2_rgq8c")
+ingredientType = 42

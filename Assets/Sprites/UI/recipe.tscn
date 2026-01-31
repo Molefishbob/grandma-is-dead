@@ -23,8 +23,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4gfa6")
-_requiredIngredients = PackedInt32Array(1, 2, 21)
+_requiredIngredients = PackedInt32Array(-1, 21, 22, 41)
 _options = [NodePath("Page1/OptionButton"), NodePath("Page1/OptionButton2"), NodePath("Page1/OptionButton3")]
+_ingredients = [null, ExtResource("6_x0qt2"), ExtResource("8_4c4ju"), ExtResource("7_b013o")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=962915858]
 layout_mode = 1
@@ -125,13 +126,11 @@ offset_bottom = 264.00003
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 icon_alignment = 1
-item_count = 3
+item_count = 2
 popup/item_0/icon = ExtResource("6_x0qt2")
 popup/item_0/id = 0
 popup/item_1/icon = ExtResource("7_b013o")
 popup/item_1/id = 1
-popup/item_2/icon = ExtResource("8_4c4ju")
-popup/item_2/id = 2
 
 [node name="OptionButton2" type="OptionButton" parent="Page1" unique_id=198883179]
 layout_mode = 1
