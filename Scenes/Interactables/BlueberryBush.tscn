@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://d05jpgxpg46y7"]
 
-[ext_resource type="Texture2D" uid="uid://dfgc0y1lh6p6e" path="res://Assets/Sprites/Environment/hut_placeholder.png" id="1_q447x"]
 [ext_resource type="Script" uid="uid://bu06xvltkcqt0" path="res://Scripts/Environment/Collectable.cs" id="2_1v2wk"]
 [ext_resource type="PackedScene" uid="uid://cveifcn368atm" path="res://Scenes/Ingredient/Blueberry.tscn" id="3_1v2wk"]
 
@@ -9,7 +8,6 @@ radius = 241.83676
 
 [node name="BlueberryBush" type="Sprite2D" unique_id=1553567409]
 scale = Vector2(0.16333334, 0.16333334)
-texture = ExtResource("1_q447x")
 script = ExtResource("2_1v2wk")
 _ingredient = 21
 

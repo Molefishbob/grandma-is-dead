@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cf6fo6h2d0q5n"]
+
+[ext_resource type="PackedScene" uid="uid://dsikjnh2gsxgc" path="res://Assets/Sprites/UI/recipe.tscn" id="2_64afa"]
+
+[node name="Recipebook" type="Control" unique_id=1419633312]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Recipe" parent="." unique_id=1736972220 instance=ExtResource("2_64afa")]
+layout_mode = 1
+expand_mode = 2

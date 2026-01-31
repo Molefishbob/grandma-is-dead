@@ -2,56 +2,242 @@
 
 [ext_resource type="Script" uid="uid://b7sv6m4y87bjk" path="res://Scripts/Environment/Recipe.cs" id="1_4gfa6"]
 [ext_resource type="Script" uid="uid://7leauxe6d7s4" path="res://Scripts/General/WriteText.cs" id="2_8d80d"]
+[ext_resource type="Texture2D" uid="uid://d3cdoon8v7uak" path="res://Assets/Sprites/UI/bg_book.png" id="2_iqlgt"]
+[ext_resource type="Texture2D" uid="uid://beanucbgs3jww" path="res://Assets/Sprites/Foods/pie.png" id="3_or8em"]
+[ext_resource type="Texture2D" uid="uid://bpegsg0va46iy" path="res://Assets/Sprites/Foods/blueberry.png" id="6_x0qt2"]
+[ext_resource type="Texture2D" uid="uid://dl2vis10ogl52" path="res://Assets/Sprites/Foods/orange.png" id="7_b013o"]
+[ext_resource type="Texture2D" uid="uid://jxdotalrfeb6" path="res://Assets/Sprites/Foods/thyme.png" id="8_4c4ju"]
 
-[sub_resource type="FontFile" id="FontFile_erpjq"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="LabelSettings" id="LabelSettings_x0qt2"]
+font_color = Color(0, 0, 0, 1)
 
-[node name="Recipe" type="TextureRect" unique_id=1736972220]
+[sub_resource type="LabelSettings" id="LabelSettings_5htue"]
+line_spacing = 1.0
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[node name="Recipe" type="TextureRect" unique_id=1736972220 node_paths=PackedStringArray("_options")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4gfa6")
+_requiredIngredients = PackedInt32Array(1, 2, 21)
+_options = [NodePath("Page1/OptionButton"), NodePath("Page1/OptionButton2"), NodePath("Page1/OptionButton3")]
 
-[node name="Recipe Description" type="RichTextLabel" parent="." unique_id=1810163155]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 127.0
-offset_right = 376.0
-offset_bottom = 548.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = SubResource("FontFile_erpjq")
-text = "Blav laladvladv vda
-vadvd avdavabffnbfn
+[node name="TextureRect" type="TextureRect" parent="." unique_id=962915858]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iqlgt")
+expand_mode = 2
 
+[node name="Page1" type="Control" parent="." unique_id=861684867]
+layout_mode = 1
+anchor_left = 0.063
+anchor_top = 0.025
+anchor_right = 0.5
+anchor_bottom = 0.934
+offset_left = 0.42399597
+offset_top = -0.20000076
+grow_vertical = 2
 
-nsfbfbfsadvkdavadkovdaokvopkad"
-script = ExtResource("2_8d80d")
-
-[node name="Recipe name" type="Label" parent="." unique_id=1308304749]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 16.0
-offset_right = 390.0
-offset_bottom = 69.0
+[node name="Recipe Name" type="Label" parent="Page1" unique_id=1308304749]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.02
+anchor_right = 1.0
+anchor_bottom = 0.02
+offset_bottom = 39.0
+grow_horizontal = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Blueberry pie"
 horizontal_alignment = 1
+
+[node name="Recipe Description" type="Label" parent="Page1" unique_id=2038260088]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.2
+text = "A timeless classic with owngrown blueberries and a hint of citrous."
+label_settings = SubResource("LabelSettings_x0qt2")
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_8d80d")
+
+[node name="TextureRect" type="TextureRect" parent="Page1" unique_id=230943586]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.374
+anchor_top = 0.282
+anchor_right = 0.62200004
+anchor_bottom = 0.47800002
+grow_horizontal = 2
+texture = ExtResource("3_or8em")
+expand_mode = 5
+
+[node name="IngredientsLabel" type="Label" parent="Page1" unique_id=1867572100]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.55
+anchor_right = 0.5
+anchor_bottom = 0.6
+offset_left = -79.0
+offset_right = 79.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderSmall"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ingredients"
+horizontal_alignment = 1
+
+[node name="ReadyIngredients" type="Label" parent="Page1" unique_id=565844488]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.65
+anchor_right = 0.5
+anchor_bottom = 0.65
+offset_left = -220.0
+offset_right = 220.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Flour, Eggs, Sugar"
+
+[node name="OptionButton" type="OptionButton" parent="Page1" unique_id=1121381475]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.72
+anchor_right = 0.5
+anchor_bottom = 0.72
+offset_left = 88.5
+offset_right = 376.5
+offset_bottom = 264.00003
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+icon_alignment = 1
+item_count = 3
+popup/item_0/icon = ExtResource("6_x0qt2")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("7_b013o")
+popup/item_1/id = 1
+popup/item_2/icon = ExtResource("8_4c4ju")
+popup/item_2/id = 2
+
+[node name="OptionButton2" type="OptionButton" parent="Page1" unique_id=198883179]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.72
+anchor_right = 0.5
+anchor_bottom = 0.72
+offset_left = -70.5
+offset_right = 217.5
+offset_bottom = 264.00003
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+icon_alignment = 1
+item_count = 3
+popup/item_0/icon = ExtResource("6_x0qt2")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("7_b013o")
+popup/item_1/id = 1
+popup/item_2/icon = ExtResource("8_4c4ju")
+popup/item_2/id = 2
+
+[node name="OptionButton3" type="OptionButton" parent="Page1" unique_id=1863155784]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.72
+anchor_right = 0.5
+anchor_bottom = 0.72
+offset_left = -226.5
+offset_top = 0.7529602
+offset_right = 61.5
+offset_bottom = 264.75296
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+icon_alignment = 1
+item_count = 3
+popup/item_0/icon = ExtResource("6_x0qt2")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("7_b013o")
+popup/item_1/id = 1
+popup/item_2/icon = ExtResource("8_4c4ju")
+popup/item_2/id = 2
+
+[node name="Page2" type="Control" parent="." unique_id=402517995]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.023000002
+anchor_right = 0.93700004
+anchor_bottom = 0.938
+offset_top = 0.095998764
+offset_bottom = 0.17596436
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Page2" unique_id=1839440783]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.078
+anchor_right = 0.5
+anchor_bottom = 0.11100001
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Method"
+
+[node name="Control" type="Control" parent="Page2" unique_id=679940814]
+layout_mode = 1
+anchor_left = 0.15300001
+anchor_top = 0.158
+anchor_right = 0.859
+anchor_bottom = 0.762
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Recipe Description" type="Label" parent="Page2/Control" unique_id=1525805916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "From the pantry, combine flour, sugar, and eggs. Work the mixture together until it forms a soft dough, then press it gently into the pie dish.
+
+Before anything else, zest the orange. Grandma always said the scent should be the first thing to fill the kitchen.
+
+Scatter the blueberries into the prepared crust, letting them settle naturally.
+
+Finish with a light sprinkle of wild thyme — just enough to hint at the forest without overpowering the fruit.
+
+Bake until golden and the kitchen fills with the scent of warm pie."
+label_settings = SubResource("LabelSettings_5htue")
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_8d80d")
+
+[node name="Button" type="Button" parent="Page2" unique_id=2025905477]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.731
+anchor_top = 0.924
+anchor_right = 0.96500003
+anchor_bottom = 0.97400004
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Next Recipe"
+icon_alignment = 2
