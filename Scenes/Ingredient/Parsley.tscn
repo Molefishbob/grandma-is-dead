@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dnpoqagq8dse8"]
+
+[ext_resource type="Texture2D" uid="uid://dlrie61gu6ag3" path="res://Assets/Sprites/Foods/parsey.png" id="1_rctyo"]
+
+[node name="Parsley" type="Sprite2D" unique_id=1909771140]
+texture = ExtResource("1_rctyo")

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cveifcn368atm"]
 
-[ext_resource type="Texture2D" uid="uid://beanucbgs3jww" path="res://Assets/Sprites/Foods/pie.png" id="1_q5hga"]
+[ext_resource type="Texture2D" uid="uid://bpegsg0va46iy" path="res://Assets/Sprites/Foods/blueberry.png" id="1_7os3a"]
 
 [node name="Blueberry" type="Sprite2D" unique_id=1909771140]
-scale = Vector2(0.35650516, 0.35650516)
-texture = ExtResource("1_q5hga")
+texture = ExtResource("1_7os3a")

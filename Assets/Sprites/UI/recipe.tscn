@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dsikjnh2gsxgc"]
+
+[ext_resource type="Script" uid="uid://b7sv6m4y87bjk" path="res://Scripts/Environment/Recipe.cs" id="1_4gfa6"]
+[ext_resource type="Script" uid="uid://7leauxe6d7s4" path="res://Scripts/General/WriteText.cs" id="2_8d80d"]
+
+[sub_resource type="FontFile" id="FontFile_erpjq"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Recipe" type="TextureRect" unique_id=1736972220]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4gfa6")
+
+[node name="Recipe Description" type="RichTextLabel" parent="." unique_id=1810163155]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 127.0
+offset_right = 376.0
+offset_bottom = 548.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontFile_erpjq")
+text = "Blav laladvladv vda
+vadvd avdavabffnbfn
+
+
+nsfbfbfsadvkdavadkovdaokvopkad"
+script = ExtResource("2_8d80d")
+
+[node name="Recipe name" type="Label" parent="." unique_id=1308304749]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 390.0
+offset_bottom = 69.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Blueberry pie"
+horizontal_alignment = 1
