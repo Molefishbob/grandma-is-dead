@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cnvsws0objo7v"]
+
+[node name="MainMenu" type="Node2D" unique_id=1957703770]
+
+[node name="Label" type="Label" parent="." unique_id=783626655]
+offset_left = 11.0
+offset_top = 4.0
+offset_right = 1203.0
+offset_bottom = 649.0
+text = "I am main menu"
+horizontal_alignment = 1

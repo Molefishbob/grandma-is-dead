@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://6kr52ajpmvwv"]
+
+[ext_resource type="Script" uid="uid://b7hxugyygbssh" path="res://Scenes/Environment/MapGardenController.cs" id="1_677r7"]
+[ext_resource type="Texture2D" uid="uid://cgs00gbhrh38d" path="res://Assets/Sprites/Environment/bg_garden.png" id="1_nwb72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwb72"]
+size = Vector2(1203, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_677r7"]
+size = Vector2(99, 679)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyaft"]
+size = Vector2(122, 687)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cs5d"]
+size = Vector2(1200, 103)
+
+[node name="map_garden" type="Node2D" unique_id=667346076]
+script = ExtResource("1_677r7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1440731533]
+position = Vector2(597.8889, 330)
+scale = Vector2(0.62592596, 0.6259259)
+texture = ExtResource("1_nwb72")
+
+[node name="Walls" type="Node" parent="." unique_id=769284661]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=1469680061]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" unique_id=1306140711]
+position = Vector2(602.5, 135.5)
+shape = SubResource("RectangleShape2D_nwb72")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls" unique_id=302533513]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2" unique_id=1843192275]
+position = Vector2(39.5, 329.5)
+shape = SubResource("RectangleShape2D_677r7")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls" unique_id=2094687817]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3" unique_id=1274783693]
+position = Vector2(1140, 330)
+shape = SubResource("RectangleShape2D_fyaft")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls" unique_id=1480441897]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4" unique_id=2106740757]
+position = Vector2(599, 613.5)
+shape = SubResource("RectangleShape2D_5cs5d")
+
+[node name="PlayerSpawn" type="Node" parent="Walls" unique_id=659590367]
