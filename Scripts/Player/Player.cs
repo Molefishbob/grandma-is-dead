@@ -62,6 +62,8 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		Velocity = new Vector2(0, 0);
+
 		if (isMasked
 			|| AnimPlayerNode.CurrentAnimation == ANIM_MASK
 			|| AnimPlayerNode.CurrentAnimation == ANIM_GATHER
