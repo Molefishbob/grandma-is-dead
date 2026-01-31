@@ -14,9 +14,8 @@ public partial class MaskController : Sprite2D
 
 	public override void _Process(double delta)
 	{
-		if (playerNode.Velocity.Length() > 0)
+		if (Math.Round(playerNode.Velocity.Length()) > 0)
 		{
-			GD.Print($"Velocity: {playerNode.GetRealVelocity().Length()}");
 			Modulate =  new Color(1f, 1f, 1f, 0f);
 		}
 
