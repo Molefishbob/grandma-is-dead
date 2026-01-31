@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://csmo6cxhh4wgm"]
+
+[ext_resource type="Texture2D" uid="uid://bmscigbmlm651" path="res://Assets/Sprites/Foods/water.png" id="1_dmn4v"]
+
+[node name="Water" type="Sprite2D" unique_id=1909771140]
+texture = ExtResource("1_dmn4v")

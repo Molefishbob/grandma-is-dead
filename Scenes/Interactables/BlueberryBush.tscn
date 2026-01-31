@@ -24,26 +24,23 @@ position = Vector2(336.73468, -79.591835)
 [node name="Blueberry3" parent="CanvasGroup" unique_id=1686763891 instance=ExtResource("3_1v2wk")]
 position = Vector2(-287.75513, 140.81631)
 
-[node name="Blueberry4" parent="CanvasGroup" unique_id=1777895340 instance=ExtResource("3_1v2wk")]
-position = Vector2(85.71429, 202.04082)
-
 [node name="Blueberry5" parent="CanvasGroup" unique_id=813937572 instance=ExtResource("3_1v2wk")]
 position = Vector2(-232.65306, -55.102043)
 
 [node name="Blueberry6" parent="CanvasGroup" unique_id=216923601 instance=ExtResource("3_1v2wk")]
-position = Vector2(-110.20408, 214.2857)
+position = Vector2(0, 226.53061)
 
 [node name="Blueberry7" parent="CanvasGroup" unique_id=949474138 instance=ExtResource("3_1v2wk")]
-position = Vector2(220.40816, 79.591835)
+position = Vector2(336.73468, 183.67346)
 
 [node name="Blueberry8" parent="CanvasGroup" unique_id=1173714218 instance=ExtResource("3_1v2wk")]
-position = Vector2(-55.10204, -195.91837)
+position = Vector2(0, -275.5102)
 
 [node name="Blueberry9" parent="CanvasGroup" unique_id=145662053 instance=ExtResource("3_1v2wk")]
-position = Vector2(153.06122, -165.30612)
+position = Vector2(281.63263, -220.40814)
 
 [node name="Blueberry10" parent="CanvasGroup" unique_id=405887069 instance=ExtResource("3_1v2wk")]
-position = Vector2(-293.87753, -183.67346)
+position = Vector2(-312.24487, -232.65305)
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=1835073731]
 collision_layer = 4

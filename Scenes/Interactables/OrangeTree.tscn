@@ -5,17 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://dco01vbu7q05c" path="res://Scenes/Ingredient/Orange.tscn" id="2_xynht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6r7y"]
-size = Vector2(128, 123.80064)
+size = Vector2(77.000015, 112.900345)
 
 [node name="OrangeTree" type="Sprite2D" unique_id=1553567409]
-rotation = 3.1415927
-scale = Vector2(0.8515625, 2.2940106)
 texture = ExtResource("1_xynht")
+flip_v = true
 script = ExtResource("2_f65bx")
 _ingredient = 22
 
 [node name="Oranges" type="CanvasGroup" parent="." unique_id=2064337278]
-rotation = -3.1415925
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Orange" parent="Oranges" unique_id=880724500 instance=ExtResource("2_xynht")]
@@ -37,6 +35,6 @@ position = Vector2(-78.67895, -71.144165)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1207661978]
-position = Vector2(3.637979e-12, -43.59176)
+position = Vector2(-2, 46.450146)
 scale = Vector2(0.99999976, 0.9999996)
 shape = SubResource("RectangleShape2D_u6r7y")
