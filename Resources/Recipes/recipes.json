@@ -3,6 +3,7 @@
     {
       "id": "blueberry_pie",
       "name": "Blueberry Pie",
+      "player_text": "A timeless classic with owngrown blueberries and a hint of citrous.",
       "memory": "A memory surfaces as you eat. This was one of Grandma's favourite desserts. She would always serve it just before bed. It made us heavy-eyed and calm at night, yet somehow we always woke the next morning full of energy.",
 
       "ingredients": [
@@ -43,6 +44,7 @@
     {
       "id": "herbal_tea",
       "name": "Herbal Tea",
+      "player_text": "A calming blend with fresh mint and floral chamomile for peaceful moments.",
       "memory": "As the tea settles, a familiar warning returns. Grandma often spoke of the forest and the secrets it held. Its bounties were plentiful, she said, but so were its dangers.",
       
       "ingredients": [
@@ -81,6 +83,7 @@
     {
       "id": "garlic_bread",
       "name": "Garlic Bread",
+      "player_text": "A rustic loaf with wild forest herbs and fresh garden greens.",
       "memory": "A familiar comfort follows the first bite. Garlic bread is not only delicious — it keeps those damned blood suckers away. Grandma never baked it without a reason.",
 
       "ingredients": [

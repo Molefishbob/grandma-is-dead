@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgu4dqaw4jabh"]
+
+[ext_resource type="Script" path="res://Scripts/Sandbox/SoundTestController.cs" id="1_soundtest"]
+
+[node name="SoundTest" type="Node2D" unique_id=17778199]
+script = ExtResource("1_soundtest")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dco01vbu7q05c"]
+
+[ext_resource type="Texture2D" uid="uid://beanucbgs3jww" path="res://Assets/Sprites/Foods/pie.png" id="1_w3oqw"]
+
+[node name="Orange" type="Sprite2D" unique_id=880724500]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_w3oqw")
