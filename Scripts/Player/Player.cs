@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Godot;
@@ -35,6 +36,12 @@ public partial class Player : CharacterBody2D
 		GD.Print($"Player Ready");
 		base._Ready();
 	}
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+    }
+
 
 	public override void _ExitTree() { }
 

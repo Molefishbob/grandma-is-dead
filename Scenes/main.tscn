@@ -5,8 +5,10 @@
 
 [node name="MainScene" type="Node2D" unique_id=432797952]
 
-[node name="CabinMap" parent="." unique_id=991802938 instance=ExtResource("1_bo1nx")]
+[node name="CabinMap" parent="." unique_id=991802938 node_paths=PackedStringArray("playerNode") instance=ExtResource("1_bo1nx")]
 position = Vector2(2, -2)
+playerNode = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=261896061 instance=ExtResource("2_bo1nx")]
 position = Vector2(520, 306)
+speed = Vector2(250, 150)
