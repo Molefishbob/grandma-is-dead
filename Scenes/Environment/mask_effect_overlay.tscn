@@ -9,11 +9,11 @@ frequency = 0.0075
 domain_warp_enabled = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u4ikm"]
-width = 1200
-height = 650
+width = 1920
+height = 1080
 noise = SubResource("FastNoiseLite_27tjx")
 seamless = true
-seamless_blend_skirt = 0.75
+seamless_blend_skirt = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u4ikm"]
 shader = ExtResource("1_27tjx")
@@ -32,6 +32,6 @@ motion_mirroring = Vector2(120, 65)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxLayer" unique_id=812501328]
 material = SubResource("ShaderMaterial_u4ikm")
-offset_right = 1200.0
-offset_bottom = 650.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.6428558, 0.03837258, 0.462811, 1)

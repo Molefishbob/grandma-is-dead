@@ -234,13 +234,15 @@ random_volume_offset_db = 5.0
 streams_count = 1
 stream_0/stream = ExtResource("5_4wape")
 
-[node name="Player" type="CharacterBody2D" unique_id=1893895081 node_paths=PackedStringArray("AnimPlayerNode", "StateMachineNode", "SpriteNode")]
-scale = Vector2(0.5, 0.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ji083"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1893895081 node_paths=PackedStringArray("AnimPlayerNode", "StateMachineNode", "CollisionAreaNode", "SpriteNode")]
 collision_mask = 6
 script = ExtResource("1_h54ih")
 AnimPlayerNode = NodePath("AnimationPlayer")
 StateMachineNode = NodePath("StateMachine")
-speed = Vector2(250, 250)
+CollisionAreaNode = NodePath("Area2D")
+speed = Vector2(450, 350)
 SpriteNode = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1285927309]
@@ -276,3 +278,12 @@ shape = SubResource("RectangleShape2D_jmcll")
 stream = SubResource("AudioStreamRandomizer_4wape")
 script = ExtResource("7_t26db")
 sounds = [ExtResource("5_4wape")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=59489288]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2089024577]
+position = Vector2(0, 45.315)
+scale = Vector2(7.53, 7.53)
+shape = SubResource("CircleShape2D_ji083")
+debug_color = Color(0.6115877, 0.53777146, 0.078433625, 0.41960785)

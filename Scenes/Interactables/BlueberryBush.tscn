@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d05jpgxpg46y7"]
+[gd_scene format=3 uid="uid://b7fvuggll6msk"]
 
 [ext_resource type="Script" uid="uid://bu06xvltkcqt0" path="res://Scripts/Environment/Collectable.cs" id="2_1v2wk"]
 [ext_resource type="PackedScene" uid="uid://cveifcn368atm" path="res://Scenes/Ingredient/Blueberry.tscn" id="3_1v2wk"]
@@ -40,7 +40,7 @@ position = Vector2(281.63263, -220.40814)
 [node name="Blueberry10" parent="CanvasGroup" unique_id=405887069 instance=ExtResource("3_1v2wk")]
 position = Vector2(-312.24487, -232.65305)
 
-[node name="Area2D" type="StaticBody2D" parent="." unique_id=1835073731]
+[node name="Area2D" type="Area2D" parent="." unique_id=1035433379]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1207661978]

@@ -16,6 +16,7 @@ public partial class Player : CharacterBody2D
     const string ANIM_INTERACT = "interact";
     const string ANIM_GATHER = "gather";
     const string ANIM_MASK = "mask_on";
+    const string ANIM_MASK_OFF = "mask_off";
 
 	[ExportGroup("Required Nodes")]
 	[Export]
@@ -25,10 +26,15 @@ public partial class Player : CharacterBody2D
 	public StateMachine StateMachineNode { get; private set; }
 
 	[Export]
+	public Area2D CollisionAreaNode { get; private set; }
+
+	[Export]
 	public Vector2 speed = new();
 
 	[Export]
 	public Sprite2D SpriteNode { get; private set; }
+
+	public Collectable[] collectedItems = [];
 
 	public Vector2 direction = new();
 
@@ -38,6 +44,7 @@ public partial class Player : CharacterBody2D
 	{
 		GD.Print($"Player Ready");
 		AnimPlayerNode.AnimationFinished += AnimationFinishedHandler;
+		CollisionAreaNode.AreaEntered += HandleCollisionBoxAreaEntered;
 		base._Ready();
 	}
 
@@ -48,7 +55,12 @@ public partial class Player : CharacterBody2D
     }
 
 
-	public override void _ExitTree() { }
+	public override void _ExitTree()
+	{
+		AnimPlayerNode.AnimationFinished -= AnimationFinishedHandler;
+		CollisionAreaNode.AreaEntered -= HandleCollisionBoxAreaEntered;
+		base._ExitTree();
+	}
 
 	public override void _Input(InputEvent @event)
 	{
@@ -83,11 +95,6 @@ public partial class Player : CharacterBody2D
 		Flip();
 	}
 
-    public void HandleCollisionBoxAreaEntered(Area2D area)
-	{
-		GD.Print($"{area.Name} hit");
-	}
-
     private void HandleWalkAnimation()
     {
 		if (Math.Round(direction.Length()) > 0)
@@ -110,6 +117,7 @@ public partial class Player : CharacterBody2D
 		if (isMasked && !Input.IsActionPressed(INPUT_MASK_BUTTON))
 		{
 			isMasked = false;
+			GetTree().Root.Notification(5007);
 			PlayAnimation(ANIM_IDLE);
 		}
 	}
@@ -127,6 +135,27 @@ public partial class Player : CharacterBody2D
 		SpriteNode.FlipH = isMovingRight;
 	}
 
+    public void HandleCollisionBoxAreaEntered(Area2D area)
+	{
+		GD.Print($"{area.Name} hit");
+		GD.Print($"{area.GetParent().Name} is the parent");
+		if (area.GetParent() is Collectable collectable)
+		{
+			GD.Print($"{area.GetParent().Name} is a collectable of type {collectable.Ingredient}");
+			Gather(collectable);
+		}
+	}
+
+	public void Gather(Collectable collectable)
+	{
+		var ingredient = collectable.Collect();
+		if (ingredient == null) { return; }
+
+        collectedItems = [.. collectedItems, collectable];
+		GD.Print($"Collected items count: {collectedItems.Length}");
+		GD.Print($"Collected items: {string.Join(", ", collectedItems.Select(item => item.Ingredient.ToString()))}");
+	}
+
 	public void PlayAnimation(string animationName)
 	{
 		AnimPlayerNode.Play(animationName);
@@ -137,6 +166,7 @@ public partial class Player : CharacterBody2D
 		if (animName == ANIM_MASK)
 		{
 			isMasked = true;
+			GetTree().CurrentScene.Notification(5006);
 		}
     }
 }

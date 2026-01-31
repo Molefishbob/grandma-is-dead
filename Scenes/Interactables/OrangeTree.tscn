@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://g8o2cgmx0gop"]
+[gd_scene format=3 uid="uid://dgil15fb23hml"]
 
 [ext_resource type="Script" uid="uid://bu06xvltkcqt0" path="res://Scripts/Environment/Collectable.cs" id="2_f65bx"]
 [ext_resource type="PackedScene" uid="uid://dco01vbu7q05c" path="res://Scenes/Ingredient/Orange.tscn" id="2_xynht"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phdga"]
+radius = 69.00725
 
 [node name="OrangeTree" type="Sprite2D" unique_id=1553567409]
 flip_v = true
@@ -25,3 +28,10 @@ position = Vector2(13.000002, 32.000004)
 
 [node name="Orange5" parent="Oranges" unique_id=2043017851 instance=ExtResource("2_xynht")]
 position = Vector2(-42.00001, 10.999992)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=309692902]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1266709435 groups=["interactable_colliders"]]
+position = Vector2(8, 162)
+shape = SubResource("CircleShape2D_phdga")

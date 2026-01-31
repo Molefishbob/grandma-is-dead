@@ -17,8 +17,7 @@ gradient = SubResource("Gradient_jjvhh")
 
 [node name="Player" parent="." unique_id=261896061 instance=ExtResource("2_bo1nx")]
 z_index = 1
-position = Vector2(520, 306)
-speed = Vector2(250, 150)
+position = Vector2(1000, 750)
 
 [node name="Maps" type="Node" parent="." unique_id=215439392 node_paths=PackedStringArray("mapRooms", "fadingOverlay", "fadeDelayTimer")]
 script = ExtResource("2_jjvhh")
@@ -39,8 +38,8 @@ playerNode = NodePath("../../Player")
 [node name="FadeOverlay" type="Sprite2D" parent="Maps" unique_id=1026416138]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
-position = Vector2(589, 328.00003)
-scale = Vector2(5.4882813, 732)
+position = Vector2(1032.3812, 559.00006)
+scale = Vector2(8.952197, 1194)
 texture = SubResource("GradientTexture1D_kry3j")
 
 [node name="FadeOutDelayTimer" type="Timer" parent="Maps" unique_id=2115166214]

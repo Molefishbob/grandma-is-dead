@@ -9,6 +9,7 @@ public partial class Collectable: Node
         get { return _isCollected; }
         protected set { _isCollected = value; }
     }
+
     [Export]
     protected bool _isVisible = true;
     public bool IsVisible
@@ -16,8 +17,10 @@ public partial class Collectable: Node
         get { return _isVisible; }
         protected set { _isVisible = value; }
     }
+
     [Export]
     protected IngredientType _ingredient;
+
     public IngredientType Ingredient
     {
         get { return _ingredient; }

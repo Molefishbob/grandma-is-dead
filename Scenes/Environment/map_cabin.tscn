@@ -4,21 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://ct4v5r2jpk5ey" path="res://Assets/Sprites/Environment/bg_cabin.png" id="1_i277d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i277d"]
-size = Vector2(142, 651)
+size = Vector2(142, 1064.914)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yof1"]
-size = Vector2(1054, 109)
+size = Vector2(1963, 109)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ummex"]
 size = Vector2(214, 67)
 
 [node name="Node2D" type="Node2D" unique_id=991802938]
 script = ExtResource("1_8yof1")
-minMaxScale = Vector2(0.1, 1.2)
+minMaxScale = Vector2(0.4, 1.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=932095082]
-position = Vector2(577, 347.99997)
-scale = Vector2(0.631611, 0.6316111)
+position = Vector2(972.49335, 570.465)
+scale = Vector2(1.0435832, 1.0435834)
 texture = ExtResource("1_i277d")
 
 [node name="Walls" type="Node" parent="." unique_id=637531438]
@@ -27,7 +27,7 @@ texture = ExtResource("1_i277d")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1833390989 groups=["wall_colliders"]]
-position = Vector2(191, 395.99997)
+position = Vector2(294.00003, 665)
 rotation = -2.4085543
 shape = SubResource("RectangleShape2D_i277d")
 
@@ -35,7 +35,7 @@ shape = SubResource("RectangleShape2D_i277d")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=816134994 groups=["wall_colliders"]]
-position = Vector2(975.00006, 332.00006)
+position = Vector2(1556.4708, 592.2944)
 rotation = -0.9599311
 shape = SubResource("RectangleShape2D_i277d")
 
@@ -43,14 +43,14 @@ shape = SubResource("RectangleShape2D_i277d")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/AboveWall" unique_id=1816144453 groups=["wall_colliders"]]
-position = Vector2(548, 211)
+position = Vector2(968, 432)
 shape = SubResource("RectangleShape2D_8yof1")
 
 [node name="BelowWall" type="StaticBody2D" parent="Walls" unique_id=6075215]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BelowWall" unique_id=323341918 groups=["wall_colliders"]]
-position = Vector2(601, 651)
+position = Vector2(1018, 999)
 shape = SubResource("RectangleShape2D_8yof1")
 
 [node name="Interactables" type="Node" parent="." unique_id=654689218 groups=["interactables"]]
@@ -58,6 +58,6 @@ shape = SubResource("RectangleShape2D_8yof1")
 [node name="Area2D" type="Area2D" parent="Interactables" unique_id=1859532512]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Area2D" unique_id=1276696943 groups=["interactable_colliders"]]
-position = Vector2(1059, 564.5)
+position = Vector2(1662, 854)
 shape = SubResource("RectangleShape2D_ummex")
 debug_color = Color(0.2494027, 0.6358461, 0, 0.41960785)
