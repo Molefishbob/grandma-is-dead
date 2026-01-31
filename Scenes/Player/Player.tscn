@@ -5,12 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://cxfgvvjpc1o6q" path="res://Assets/Sprites/Player/chr_walk_1.png" id="2_ude3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmcll"]
+size = Vector2(126, 228)
 
 [node name="Player" type="CharacterBody2D" unique_id=1893895081 node_paths=PackedStringArray("AnimPlayerNode", "StateMachineNode", "SpriteNode")]
+scale = Vector2(0.5, 0.5)
+collision_mask = 6
 script = ExtResource("1_h54ih")
 AnimPlayerNode = NodePath("AnimationPlayer")
 StateMachineNode = NodePath("StateMachine")
-speed = Vector2(10, 10)
+speed = Vector2(250, 250)
 SpriteNode = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1285927309]
@@ -29,4 +32,5 @@ states = []
 [node name="PickupState" type="Node" parent="StateMachine" unique_id=1597565189]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=330222348]
+position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_jmcll")

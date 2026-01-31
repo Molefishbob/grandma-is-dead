@@ -1,9 +1,20 @@
 using System;
+using System.Diagnostics;
 using System.Linq;
 using Godot;
 
 public partial class Player : CharacterBody2D
 {
+    const string INPUT_MOVE_LEFT = "MoveLeft";
+    const string INPUT_MOVE_RIGHT = "MoveRight";
+    const string INPUT_MOVE_UP = "MoveUp";
+    const string INPUT_MOVE_DOWN = "MoveDown";
+    const string ANIM_IDLE = "Idle";
+    const string ANIM_MOVE = "Move";
+    const string ANIM_INTERACT = "Interact";
+    const string ANIM_GATHER = "Attack";
+    const string ANIM_MASK = "Mask";
+
 	[ExportGroup("Required Nodes")]
 	[Export]
 	public AnimationPlayer AnimPlayerNode { get; private set; }
@@ -21,6 +32,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+		GD.Print($"Player Ready");
 		base._Ready();
 	}
 
@@ -29,10 +41,10 @@ public partial class Player : CharacterBody2D
 	public override void _Input(InputEvent @event)
 	{
 		direction = Input.GetVector(
-			GameConstants.INPUT_MOVE_LEFT,
-			GameConstants.INPUT_MOVE_RIGHT,
-			GameConstants.INPUT_MOVE_UP,
-			GameConstants.INPUT_MOVE_DOWN
+			INPUT_MOVE_LEFT,
+			INPUT_MOVE_RIGHT,
+			INPUT_MOVE_UP,
+			INPUT_MOVE_DOWN
 		);
 	}
 
@@ -69,12 +81,7 @@ public partial class Player : CharacterBody2D
 			return;
 		}
 
-		bool isMovingLeft = Velocity.X < 0;
-		SpriteNode.FlipH = isMovingLeft;
-	}
-
-	public void ToggleCollisionBox(bool value)
-	{
-		// CollisionNode.Disabled = value;
+		bool isMovingRight = Velocity.X > 0;
+		SpriteNode.FlipH = isMovingRight;
 	}
 }

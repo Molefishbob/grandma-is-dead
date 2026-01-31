@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bqljqisylj8j3"]
+
+[ext_resource type="Texture2D" uid="uid://dfgc0y1lh6p6e" path="res://Assets/Sprites/Environment/hut_placeholder.png" id="1_i277d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i277d"]
+size = Vector2(142, 651)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yof1"]
+size = Vector2(644, 109)
+
+[node name="Node2D" type="Node2D" unique_id=991802938]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=932095082]
+position = Vector2(584, 322)
+scale = Vector2(0.7819999, 0.782)
+texture = ExtResource("1_i277d")
+
+[node name="Walls" type="Node" parent="." unique_id=637531438]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=831378582]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1833390989]
+position = Vector2(168, 324.5)
+shape = SubResource("RectangleShape2D_i277d")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=611454321]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=816134994]
+position = Vector2(933, 325)
+shape = SubResource("RectangleShape2D_i277d")
+
+[node name="AboveWall" type="StaticBody2D" parent="Walls" unique_id=1728824083]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/AboveWall" unique_id=1816144453]
+position = Vector2(554, 50.5)
+shape = SubResource("RectangleShape2D_8yof1")
+
+[node name="BelowWall" type="StaticBody2D" parent="Walls" unique_id=6075215]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BelowWall" unique_id=323341918]
+position = Vector2(557, 640)
+shape = SubResource("RectangleShape2D_8yof1")
+
+[node name="Interactables" type="Node" parent="." unique_id=654689218]
