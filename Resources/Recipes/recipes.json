@@ -43,7 +43,7 @@
     {
       "id": "herbal_tea",
       "name": "Herbal Tea",
-      "memory": "As the tea settles, a familiar warning returns. Grandma often spoke of the forest and the secrets it held. Its bounties were plentiful, she said, but so were its dangers — and respect was the price of safely taking from it.",
+      "memory": "As the tea settles, a familiar warning returns. Grandma often spoke of the forest and the secrets it held. Its bounties were plentiful, she said, but so were its dangers.",
       
       "ingredients": [
         { "id": "water", "source": "pantry", "hidden": false, "auto_add": true },
