@@ -5,8 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://cxfgvvjpc1o6q" path="res://Assets/Sprites/Player/chr_walk_1.png" id="2_ude3g"]
 [ext_resource type="Texture2D" uid="uid://cc2y21e42qb8s" path="res://Assets/Sprites/Player/chr_walk_2.png" id="3_jmcll"]
 [ext_resource type="Texture2D" uid="uid://dhgmjpc43a4d1" path="res://Assets/Sprites/Player/chr_walk_3.png" id="4_4wape"]
+[ext_resource type="Texture2D" uid="uid://dq6kd6hb8fo0n" path="res://Assets/Sprites/Player/chr_mask_1.png" id="4_ji083"]
+[ext_resource type="Texture2D" uid="uid://bcwkriyunuc12" path="res://Assets/Sprites/Player/chr_mask_2.png" id="5_0kmp4"]
 [ext_resource type="AudioStream" uid="uid://0ji3x6f8f1f5" path="res://Assets/Sounds/walk_on_wood_01.ogg" id="5_4wape"]
+[ext_resource type="Texture2D" uid="uid://cvkctk3ahivex" path="res://Assets/Sprites/Player/chr_mask_3.png" id="6_i5acl"]
 [ext_resource type="Script" uid="uid://ce3blwailfqca" path="res://Scripts/Player/PlayerAudioController.cs" id="7_t26db"]
+[ext_resource type="PackedScene" uid="uid://crkid04qe66pc" path="res://Scenes/Environment/mask_effect_overlay.tscn" id="8_0kmp4"]
+[ext_resource type="Script" uid="uid://b7ffmj7rqbb8d" path="res://Scripts/Environment/MaskEffectOverlayController.cs" id="9_i5acl"]
 
 [sub_resource type="Animation" id="Animation_t26db"]
 length = 0.001
@@ -38,6 +43,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_jmcll")]
+}
+
+[sub_resource type="Animation" id="Animation_epg6k"]
+resource_name = "mask_on"
+length = 0.6666834
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.00029999999, 0.0004, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_jmcll"), ExtResource("2_ude3g"), ExtResource("2_ude3g"), ExtResource("2_ude3g"), ExtResource("2_ude3g"), ExtResource("4_ji083"), ExtResource("5_0kmp4"), ExtResource("6_i5acl")]
 }
 
 [sub_resource type="Animation" id="Animation_825xp"]
@@ -79,6 +101,7 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_t26db"),
 &"idle": SubResource("Animation_fk5o5"),
+&"mask_on": SubResource("Animation_epg6k"),
 &"walk": SubResource("Animation_825xp")
 }
 
@@ -105,6 +128,10 @@ texture = ExtResource("2_ude3g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824774761]
 libraries/ = SubResource("AnimationLibrary_ji083")
+
+[node name="MaskEffectOverlay" parent="." unique_id=1846264609 node_paths=PackedStringArray("playerNode") instance=ExtResource("8_0kmp4")]
+script = ExtResource("9_i5acl")
+playerNode = NodePath("..")
 
 [node name="StateMachine" type="Node" parent="." unique_id=70807211 node_paths=PackedStringArray("states")]
 script = ExtResource("2_ft8w5")
