@@ -9,11 +9,11 @@ public partial class Player : CharacterBody2D
     const string INPUT_MOVE_RIGHT = "MoveRight";
     const string INPUT_MOVE_UP = "MoveUp";
     const string INPUT_MOVE_DOWN = "MoveDown";
-    const string ANIM_IDLE = "Idle";
-    const string ANIM_MOVE = "Move";
-    const string ANIM_INTERACT = "Interact";
-    const string ANIM_GATHER = "Attack";
-    const string ANIM_MASK = "Mask";
+    const string ANIM_IDLE = "idle";
+    const string ANIM_MOVE = "walk";
+    const string ANIM_INTERACT = "interact";
+    const string ANIM_GATHER = "gather";
+    const string ANIM_MASK = "use_mask";
 
 	[ExportGroup("Required Nodes")]
 	[Export]
@@ -50,27 +50,35 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (direction == Vector2.Zero)
+		Vector2 newVelocity = direction * speed;
+		if (newVelocity == Vector2.Zero)
 		{
-			// StateMachineNode.SwitchState<PlayerIdleState>();
+			HandleWalkAnimation();
 			return;
 		}
 
-		Velocity = new Vector2(
-			direction.X,
-			direction.Y
-		);
-		Velocity *= speed;
-
+		Velocity = newVelocity;
 		MoveAndSlide();
+		HandleWalkAnimation();
 		Flip();
 	}
 
-	public void HandleCollisionBoxAreaEntered(Area2D area)
+    public void HandleCollisionBoxAreaEntered(Area2D area)
 	{
 		GD.Print($"{area.Name} hit");
 	}
 
+    private void HandleWalkAnimation()
+    {
+		if (Math.Round(direction.Length()) > 0)
+		{
+			PlayAnimation(ANIM_MOVE);
+		}
+		else
+		{
+			PlayAnimation(ANIM_IDLE);
+		}
+    }
 
 	public void Flip()
 	{
@@ -83,5 +91,10 @@ public partial class Player : CharacterBody2D
 
 		bool isMovingRight = Velocity.X > 0;
 		SpriteNode.FlipH = isMovingRight;
+	}
+
+	public void PlayAnimation(string animationName)
+	{
+		AnimPlayerNode.Play(animationName);
 	}
 }

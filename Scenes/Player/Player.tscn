@@ -3,9 +3,68 @@
 [ext_resource type="Script" uid="uid://dfl7nikgxtn3k" path="res://Scripts/Player/Player.cs" id="1_h54ih"]
 [ext_resource type="Script" uid="uid://drj33g67u8ho" path="res://Scripts/Player/StateMachine.cs" id="2_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://cxfgvvjpc1o6q" path="res://Assets/Sprites/Player/chr_walk_1.png" id="2_ude3g"]
+[ext_resource type="Texture2D" uid="uid://cc2y21e42qb8s" path="res://Assets/Sprites/Player/chr_walk_2.png" id="3_jmcll"]
+[ext_resource type="Texture2D" uid="uid://dhgmjpc43a4d1" path="res://Assets/Sprites/Player/chr_walk_3.png" id="4_4wape"]
+
+[sub_resource type="Animation" id="Animation_t26db"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ude3g")]
+}
+
+[sub_resource type="Animation" id="Animation_fk5o5"]
+resource_name = "idle"
+length = 1.0001
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_jmcll")]
+}
+
+[sub_resource type="Animation" id="Animation_825xp"]
+resource_name = "walk"
+length = 0.6666834
+loop_mode = 1
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_ude3g"), ExtResource("3_jmcll"), ExtResource("4_4wape"), ExtResource("3_jmcll")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ji083"]
+_data = {
+&"RESET": SubResource("Animation_t26db"),
+&"idle": SubResource("Animation_fk5o5"),
+&"walk": SubResource("Animation_825xp")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmcll"]
-size = Vector2(126, 228)
+size = Vector2(112, 132)
 
 [node name="Player" type="CharacterBody2D" unique_id=1893895081 node_paths=PackedStringArray("AnimPlayerNode", "StateMachineNode", "SpriteNode")]
 scale = Vector2(0.5, 0.5)
@@ -20,6 +79,7 @@ SpriteNode = NodePath("Sprite2D")
 texture = ExtResource("2_ude3g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824774761]
+libraries/ = SubResource("AnimationLibrary_ji083")
 
 [node name="StateMachine" type="Node" parent="." unique_id=70807211 node_paths=PackedStringArray("states")]
 script = ExtResource("2_ft8w5")
@@ -32,5 +92,5 @@ states = []
 [node name="PickupState" type="Node" parent="StateMachine" unique_id=1597565189]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=330222348]
-position = Vector2(-1, 10)
+position = Vector2(2, 60)
 shape = SubResource("RectangleShape2D_jmcll")
