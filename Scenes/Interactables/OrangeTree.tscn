@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://g8o2cgmx0gop"]
 
-[ext_resource type="Texture2D" uid="uid://dw85sjycg6i56" path="res://Assets/Sprites/Player/Player_temp.png" id="1_xynht"]
 [ext_resource type="Script" uid="uid://bu06xvltkcqt0" path="res://Scripts/Environment/Collectable.cs" id="2_f65bx"]
 [ext_resource type="PackedScene" uid="uid://dco01vbu7q05c" path="res://Scenes/Ingredient/Orange.tscn" id="2_xynht"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6r7y"]
-size = Vector2(77.000015, 112.900345)
-
 [node name="OrangeTree" type="Sprite2D" unique_id=1553567409]
-texture = ExtResource("1_xynht")
 flip_v = true
 script = ExtResource("2_f65bx")
 _ingredient = 22
@@ -17,24 +12,16 @@ _ingredient = 22
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Orange" parent="Oranges" unique_id=880724500 instance=ExtResource("2_xynht")]
-position = Vector2(58.715576, -34.976746)
+position = Vector2(49.000008, 93.00001)
 
 [node name="Orange2" parent="Oranges" unique_id=2133125578 instance=ExtResource("2_xynht")]
-position = Vector2(73.98161, -72.93023)
+position = Vector2(75.00001, 5.9999924)
 
 [node name="Orange3" parent="Oranges" unique_id=1090969261 instance=ExtResource("2_xynht")]
-position = Vector2(-35.22939, -40.781384)
+position = Vector2(-29.000004, 82.00001)
 
 [node name="Orange4" parent="Oranges" unique_id=1177222986 instance=ExtResource("2_xynht")]
-position = Vector2(-3.5229788, -84.093)
+position = Vector2(13.000002, 32.000004)
 
 [node name="Orange5" parent="Oranges" unique_id=2043017851 instance=ExtResource("2_xynht")]
-position = Vector2(-78.67895, -71.144165)
-
-[node name="Area2D" type="StaticBody2D" parent="." unique_id=1873891318]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1207661978]
-position = Vector2(-2, 46.450146)
-scale = Vector2(0.99999976, 0.9999996)
-shape = SubResource("RectangleShape2D_u6r7y")
+position = Vector2(-42.00001, 10.999992)
