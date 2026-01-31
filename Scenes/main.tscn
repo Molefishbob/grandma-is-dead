@@ -2,13 +2,47 @@
 
 [ext_resource type="PackedScene" uid="uid://bqljqisylj8j3" path="res://Scenes/Environment/map_cabin.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://Scenes/Player/Player.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://bp4toelnlccyi" path="res://Scripts/Map/MapController.cs" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://6kr52ajpmvwv" path="res://Scenes/Environment/map_garden.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cnvsws0objo7v" path="res://Scenes/Menu/main_menu.tscn" id="3_kry3j"]
+
+[sub_resource type="Gradient" id="Gradient_jjvhh"]
+offsets = PackedFloat32Array(0, 0.5013441, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.23790322, 0.23790322, 0.23790322, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kry3j"]
+gradient = SubResource("Gradient_jjvhh")
 
 [node name="MainScene" type="Node2D" unique_id=432797952]
 
-[node name="CabinMap" parent="." unique_id=991802938 node_paths=PackedStringArray("playerNode") instance=ExtResource("1_bo1nx")]
-position = Vector2(2, -2)
-playerNode = NodePath("../Player")
-
 [node name="Player" parent="." unique_id=261896061 instance=ExtResource("2_bo1nx")]
+z_index = 1
 position = Vector2(520, 306)
 speed = Vector2(250, 150)
+
+[node name="Maps" type="Node" parent="." unique_id=215439392 node_paths=PackedStringArray("mapRooms", "fadingOverlay", "fadeDelayTimer")]
+script = ExtResource("2_jjvhh")
+mapRooms = [NodePath("MainMenu"), NodePath("CabinMap"), NodePath("GardenMap")]
+fadingOverlay = NodePath("FadeOverlay")
+fadeDelayTimer = NodePath("FadeOutDelayTimer")
+
+[node name="MainMenu" parent="Maps" unique_id=1957703770 instance=ExtResource("3_kry3j")]
+
+[node name="CabinMap" parent="Maps" unique_id=991802938 node_paths=PackedStringArray("playerNode") instance=ExtResource("1_bo1nx")]
+z_index = -5
+position = Vector2(2, -2)
+playerNode = NodePath("../../Player")
+
+[node name="GardenMap" parent="Maps" unique_id=667346076 node_paths=PackedStringArray("playerNode") instance=ExtResource("3_8gbba")]
+playerNode = NodePath("../../Player")
+
+[node name="FadeOverlay" type="Sprite2D" parent="Maps" unique_id=1026416138]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(589, 328.00003)
+scale = Vector2(5.4882813, 732)
+texture = SubResource("GradientTexture1D_kry3j")
+
+[node name="FadeOutDelayTimer" type="Timer" parent="Maps" unique_id=2115166214]
+wait_time = 0.5
+one_shot = true
